@@ -20,7 +20,7 @@ export const setupServer = () => {
   app.use(cors());
   app.use(express.json());
 
-  app.get('/contacts', async (requestAnimationFrame, res) => {
+  app.get('/contacts', async (req, res) => {
     const data = await getContacts();
     res.status(200).json({
       status: 200,
