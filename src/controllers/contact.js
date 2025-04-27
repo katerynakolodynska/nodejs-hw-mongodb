@@ -47,7 +47,7 @@ export const upsertContactController = async (req, res) => {
   const status = isNew ? 201 : 200;
 
   res.status(status).json({
-    status: 200,
+    status,
     message: 'Successfully update contact',
     data,
   });
@@ -63,7 +63,7 @@ export const patchContactController = async (req, res) => {
 
   res.json({
     status: 200,
-    message: 'Successfully update a contact ',
+    message: 'Successfully patched a contact! ',
     data: result.data,
   });
 };
