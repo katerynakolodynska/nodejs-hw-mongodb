@@ -10,13 +10,13 @@ import {
   deleteContactController,
 } from '../controllers/contact.js';
 
-import { isValidId } from '../middlewares/isValidId.js';
-
 import { validateBody } from '../utils/validateBody.js';
 import {
   contactAddSchema,
   contactUpdateSchema,
 } from '../validation/contact.js';
+
+import { isValidId } from '../middlewares/isValidId.js';
 
 const contactRouter = Router();
 
