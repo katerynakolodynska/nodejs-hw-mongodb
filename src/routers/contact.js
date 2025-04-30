@@ -16,7 +16,7 @@ import {
   contactUpdateSchema,
 } from '../validation/contact.js';
 
-import { isValidId } from '.src/middlewares/isValidId.js';
+import { isValidId } from '../middlewares/isValidId.js';
 
 const contactRouter = Router();
 
@@ -32,13 +32,6 @@ contactRouter.post(
   validateBody(contactAddSchema),
   ctrlWrapper(addContactController),
 );
-
-// contactRouter.put(
-//   '/:contactId',
-//   isValidId,
-//   validateBody(contactAddSchema),
-//   ctrlWrapper(upsertContactController),
-// );
 
 contactRouter.patch(
   '/:contactId',
