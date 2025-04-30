@@ -18,9 +18,9 @@ export const setupServer = () => {
 
   app.use('/contacts', contactRouter);
 
-  app.use(notFonderHandler);
-
   app.use(errorHandler);
+
+  app.use(notFonderHandler);
 
   const port = Number(getEnvVar('PORT', 3000));
 
