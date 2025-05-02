@@ -8,6 +8,7 @@ import {
   addContactController,
   patchContactController,
   deleteContactController,
+  upsertContactController,
 } from '../controllers/contact.js';
 
 import { validateBody } from '../utils/validateBody.js';
@@ -31,6 +32,13 @@ contactRouter.post(
   '/',
   validateBody(contactAddSchema),
   ctrlWrapper(addContactController),
+);
+
+contactRouter.put(
+  '/:contactId',
+  isValidId,
+  validateBody(contactAddSchema),
+  ctrlWrapper(upsertContactController),
 );
 
 contactRouter.patch(
