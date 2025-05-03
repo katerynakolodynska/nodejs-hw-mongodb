@@ -8,7 +8,7 @@ export const validateBody = (schema) => {
       });
       next();
     } catch (error) {
-      next(createHttpError(404, error.message));
+      next(createHttpError(400, error.message));
     }
   };
   return func;

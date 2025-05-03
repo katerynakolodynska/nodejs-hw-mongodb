@@ -8,14 +8,16 @@ import {
   addContactController,
   patchContactController,
   deleteContactController,
+  upsertContactController,
 } from '../controllers/contact.js';
 
-import { isValidId } from '../middlewares/isValidId.js';
 import { validateBody } from '../utils/validateBody.js';
 import {
   contactAddSchema,
   contactUpdateSchema,
 } from '../validation/contact.js';
+
+import { isValidId } from '../middlewares/isValid.js';
 
 const contactRouter = Router();
 
@@ -32,12 +34,12 @@ contactRouter.post(
   ctrlWrapper(addContactController),
 );
 
-// contactRouter.put(
-//   '/:contactId',
-//   isValidId,
-//   validateBody(contactAddSchema),
-//   ctrlWrapper(upsertContactController),
-// );
+contactRouter.put(
+  '/:contactId',
+  isValidId,
+  validateBody(contactAddSchema),
+  ctrlWrapper(upsertContactController),
+);
 
 contactRouter.patch(
   '/:contactId',
