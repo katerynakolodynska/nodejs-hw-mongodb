@@ -49,18 +49,19 @@ export const getContactById = (id) => contactCollection.findOne({ _id: id });
 
 export const addContacts = (payload) => contactCollection.create(payload);
 
-export const updateContacts = async (_id, payload, options = {}) => {
+export const updateContacts = async (filter, payload, options = {}) => {
   const { upsert = false } = options;
-  const rawResult = await contactCollection.findOneAndUpdate({ _id }, payload, {
+  const rawResult = await contactCollection.findOneAndUpdate(filter, payload, {
     upsert,
     includeResultMetadata: true,
+    returnDocument: 'after',
   });
 
   if (!rawResult || !rawResult.value) return null;
 
   return {
     data: rawResult.value,
-    isNew: Boolean(rawResult.lastErrorObject.upserted),
+    isNew: Boolean(rawResult.lastErrorObject?.upserted),
   };
 };
 
