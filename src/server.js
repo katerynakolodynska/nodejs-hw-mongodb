@@ -10,6 +10,8 @@ import authRouter from './routers/auth.js';
 import contactRouter from './routers/contact.js';
 import { getEnvVar } from './utils/getEnvVar.js';
 
+import { UPLOAD_DIR } from './constants/index.js';
+
 export const setupServer = () => {
   const app = express();
 
@@ -19,6 +21,7 @@ export const setupServer = () => {
 
   app.use(logger);
 
+  app.use('/uploads', express.static(UPLOAD_DIR));
   app.use('/auth', authRouter);
   app.use('/contacts', contactRouter);
 
