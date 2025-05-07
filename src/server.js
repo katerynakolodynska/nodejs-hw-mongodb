@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import { logger } from './middlewares/logger.js';
 import { notFonderHandler } from './middlewares/notFoundHandler.js';
 import { errorHandler } from './middlewares/errorHandler.js';
+import { swaggerDocs } from './middlewares/swaggersDocs.js';
 
 import authRouter from './routers/auth.js';
 import contactRouter from './routers/contact.js';
@@ -24,6 +25,7 @@ export const setupServer = () => {
   app.use('/uploads', express.static(UPLOAD_DIR));
   app.use('/auth', authRouter);
   app.use('/contacts', contactRouter);
+  app.use('/api-docs', swaggerDocs());
 
   app.use(errorHandler);
 
