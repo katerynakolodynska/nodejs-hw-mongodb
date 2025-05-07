@@ -25,7 +25,7 @@ requestBody:
             type: string
             example: 'John Doe'
           phoneNumber:
-            description: "Contact's phone numbe"
+            description: "Contact's phone number"
             type: string
             example: '+380000000001'
           email:
