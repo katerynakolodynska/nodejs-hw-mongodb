@@ -37,4 +37,4 @@ properties:
   photo:
     description: "Link to contact's photo"
     type: string
-    example: binary
+    format: binary
