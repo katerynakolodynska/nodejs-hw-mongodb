@@ -27,6 +27,6 @@ paths:
       $ref: ../swagger/paths/contacts/{id}/delete.yaml
 components:
   securitySchemes:
-    bearerAuth:
+    bearer:
       type: http
       scheme: bearer

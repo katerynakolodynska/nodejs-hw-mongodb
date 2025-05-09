@@ -4,7 +4,7 @@ summary: Patch contact by id
 operationId: patchContact
 description: 'Patch contact by id'
 security:
-  - bearerAuth: []
+  - bearer: []
 parameters:
   - in: path
     name: id
@@ -25,7 +25,7 @@ requestBody:
             type: string
             example: 'John Doe'
           phoneNumber:
-            description: "Contact's phone number"
+            description: "Contact's phone numbe"
             type: string
             example: '+380000000001'
           email:

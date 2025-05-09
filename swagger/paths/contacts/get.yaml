@@ -4,7 +4,7 @@ summary: Get list of contacts
 operationId: getContacts
 description: 'Get list of contacts'
 security:
-  - bearerAuth: []
+  - bearer: []
 parameters:
   - in: query
     name: page

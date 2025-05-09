@@ -4,7 +4,7 @@ summary: Create contact
 operationId: createContact
 description: 'Create a contact with payload'
 security:
-  - bearerAuth: []
+  - bearer: []
 requestBody:
   description: 'Update contact details'
   required: true
