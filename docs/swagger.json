@@ -21,10 +21,6 @@
     {
       "name": "Contacts",
       "description": "Operations about users."
-    },
-    {
-      "name": "Auth",
-      "description": "Auth operations."
     }
   ],
   "paths": {
@@ -38,7 +34,7 @@
         "description": "Get list of contacts",
         "security": [
           {
-            "bearerAuth": []
+            "bearer": []
           }
         ],
         "parameters": [
@@ -164,7 +160,7 @@
         "description": "Create a contact with payload",
         "security": [
           {
-            "bearerAuth": []
+            "bearer": []
           }
         ],
         "requestBody": {
@@ -186,14 +182,14 @@
                     "example": "John Doe"
                   },
                   "phoneNumber": {
-                    "description": "Contact's phone numbe",
+                    "description": "Contact's phone number",
                     "type": "string",
                     "example": "+380000000001"
                   },
                   "email": {
                     "description": "Contact's email",
                     "type": "string",
-                    "example": "oleh1@example.com"
+                    "example": "kate8@example.com"
                   },
                   "isFavourite": {
                     "description": "Contact's is favourite",
@@ -268,7 +264,7 @@
         "description": "Get contact by id",
         "security": [
           {
-            "bearerAuth": []
+            "bearer": []
           }
         ],
         "parameters": [
@@ -353,7 +349,7 @@
         "description": "Patch contact by id",
         "security": [
           {
-            "bearerAuth": []
+            "bearer": []
           }
         ],
         "parameters": [
@@ -485,7 +481,7 @@
         "description": "Delete contact by id",
         "security": [
           {
-            "bearerAuth": []
+            "bearer": []
           }
         ],
         "parameters": [
@@ -539,7 +535,7 @@
   },
   "components": {
     "securitySchemes": {
-      "bearerAuth": {
+      "bearer": {
         "type": "http",
         "scheme": "bearer"
       }
@@ -597,7 +593,7 @@
           "photo": {
             "description": "Link to contact's photo",
             "type": "string",
-            "example": "binary"
+            "format": "binary"
           }
         }
       }

@@ -4,7 +4,7 @@ summary: Delete contact by id
 operationId: deleteContact
 description: 'Delete contact by id'
 security:
-  - bearerAuth: []
+  - bearer: []
 parameters:
   - in: path
     name: id
